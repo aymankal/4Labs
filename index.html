@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="4 Labs is a free, 8-week remote program taking pre-seed, pre-revenue founders from idea to a live investor pitch. No equity.">
+<meta name="description" content="4 Labs is a free, 8-week remote program taking pre-seed, pre-revenue founders from idea to a live investor pitch, with mentorship and a full AI toolkit. No equity.">
 <meta property="og:title" content="4 Labs">
-<meta property="og:description" content="From idea to investor pitch in eight weeks. Free, remote, no equity.">
+<meta property="og:description" content="From idea to investor pitch in eight weeks. Free, remote, no equity, AI tools included.">
 <meta property="og:image" content="https://aymankal.github.io/4Labs/img/hero-1920.webp">
 <style>html{scroll-behavior:smooth}body{margin:0}[hidden]{display:none!important}</style>
 <title>4 Labs</title>
@@ -163,6 +163,38 @@ section.sec{padding-block:96px 24px}
 @keyframes fade{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
 .ctrl{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
 
+/* ai */
+.ai-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:20px;align-items:start}
+@media (max-width:900px){.ai-grid{grid-template-columns:1fr}}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.tools{grid-template-columns:1fr}}
+.tool{border:1px solid var(--line);border-radius:20px;background:var(--solid);padding:20px;text-align:left;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.tool:hover{transform:translateY(-2px);border-color:var(--line-2)}
+.tool[aria-pressed="true"]{border-color:var(--acc);box-shadow:var(--glow)}
+.tool .tt{display:flex;justify-content:space-between;align-items:center}
+.tool .ic{width:40px;height:40px;border-radius:12px;background:var(--acc-soft);color:var(--acc);display:grid;place-items:center;transition:background .2s,color .2s}
+.tool[aria-pressed="true"] .ic{background:var(--acc);color:var(--acc-ink)}
+.tool .ic svg{width:20px;height:20px}
+.tool .lb{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tool h3{font-size:19px}
+.tool p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.win{border:1px solid var(--line);border-radius:24px;background:var(--solid);box-shadow:0 30px 60px -36px rgba(38,56,120,.4);overflow:hidden;position:sticky;top:96px}
+.win-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+.win-bar i{width:10px;height:10px;border-radius:50%;background:var(--line-2)}
+.win-bar span{margin-left:8px;font:500 12px var(--mono);color:var(--ink-3)}
+.win-bar em{margin-left:auto;font:500 11px var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);border-radius:999px;padding:3px 8px}
+.win-body{padding:22px;display:flex;flex-direction:column;gap:16px;min-height:340px}
+.msg{align-self:flex-end;max-width:88%;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:16px 16px 4px 16px;font-size:15px}
+.reply{display:flex;gap:12px;align-items:flex-start}
+.reply .av2{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc-2));flex:none;display:grid;place-items:center;color:#fff}
+.reply .av2 svg{width:16px;height:16px}
+.out{white-space:pre-line;font-size:15px;line-height:1.65;color:var(--ink);min-height:8em}
+.out.typing::after{content:"";display:inline-block;width:8px;height:1.1em;margin-left:2px;vertical-align:-.2em;background:var(--acc);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.win-foot{display:flex;align-items:center;gap:10px;padding:12px 16px;border-top:1px solid var(--line);color:var(--ink-3);font-size:13px}
+.win-foot svg{width:15px;height:15px;color:var(--acc)}
+.ai-note{margin-top:16px;font-size:14px;color:var(--ink-3)}
+
 /* week */
 .week-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:stretch}
 @media (max-width:900px){.week-grid{grid-template-columns:1fr}}
@@ -279,7 +311,7 @@ footer small{color:var(--ink-3);font-size:13px}
   <div class="wrap">
     <div class="navbar">
       <a class="logo" href="#top" aria-label="4 Labs home"><span class="mark"><b></b><b></b><b></b><b></b></span>4 Labs</a>
-      <div class="links" id="links"><a href="#program">Program</a><a href="#week">Your week</a><a href="#fit">Fit check</a><a href="#demo">Demo Day</a><a href="#faq">FAQ</a></div>
+      <div class="links" id="links"><a href="#program">Program</a><a href="#ai">AI toolkit</a><a href="#week">Your week</a><a href="#fit">Fit check</a><a href="#demo">Demo Day</a><a href="#faq">FAQ</a></div>
       <div class="nr">
         <button class="icon-btn" id="tg" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
         <a class="btn pri sm" href="#apply">Apply</a>
@@ -294,7 +326,7 @@ footer small{color:var(--ink-3);font-size:13px}
     <header class="hero">
       <a class="pill" href="#apply"><span class="dot"></span>Cohort 01 applications are open</a>
       <h1>From idea to <em class="s">investor pitch</em> in eight weeks.</h1>
-      <p class="lede">4 Labs is a free, remote program for pre-seed, pre-revenue founders. You get weekly mentorship, a clear plan, and a live pitch to investors from our network at the end.</p>
+      <p class="lede">4 Labs is a free, remote program for pre-seed, pre-revenue founders. You get weekly mentorship, a full AI toolkit, a clear plan, and a live pitch to investors from our network at the end.</p>
       <div class="ctas">
         <a class="btn pri" href="#apply">Apply for Cohort 01 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn sec" href="#fit">Check if you're a fit</a>
@@ -304,6 +336,7 @@ footer small{color:var(--ink-3);font-size:13px}
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>No equity</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>Fully remote</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>No revenue needed</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>AI tools included</span>
       </div>
     </header>
 
@@ -331,6 +364,25 @@ footer small{color:var(--ink-3);font-size:13px}
       <div class="prog-grid">
         <div class="tabs" role="tablist" id="tabs" aria-label="Program labs"></div>
         <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="sec" id="ai">
+      <div class="head"><span class="kicker">AI toolkit</span><h2>Move like a team of ten. <em class="s">With AI.</em></h2><p>Every founder gets the 4 Labs AI toolkit: the tools, prompts, and templates we use to research, build, sell, and pitch faster. We set you up in week one and show you how to use each one.</p></div>
+      <div class="ai-grid">
+        <div>
+          <div class="tools" id="tools"></div>
+          <p class="ai-note">Tap a tool to see an example of what it does.</p>
+        </div>
+        <div class="win" aria-live="polite">
+          <div class="win-bar"><i></i><i></i><i></i><span id="winTitle">4 Labs AI</span><em>Example</em></div>
+          <div class="win-body">
+            <div class="msg" id="aiQ"></div>
+            <div class="reply"><span class="av2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span><div class="out" id="aiA"></div></div>
+          </div>
+          <div class="win-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>Set up in week one. Templates and prompts included.</div>
+        </div>
       </div>
     </section>
 
@@ -454,7 +506,7 @@ footer small{color:var(--ink-3);font-size:13px}
   var links=$$('#links a');
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
-    ['program','week','fit','demo','faq'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+    ['program','ai','week','fit','demo','faq'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
   }
 
   /* hero tilt */
@@ -470,16 +522,16 @@ footer small{color:var(--ink-3);font-size:13px}
   var LABS=[
     {n:'01',t:'Problem',w:'Weeks 1–2',wk:[0,1],c:'var(--l1)',q:'Is this a problem people actually have?',
      d:['Pick one clear customer','Run 20 to 30 customer interviews','Find the pain people would pay to fix'],
-     h:['Interview scripts that don\'t lead the witness','Finding the right people to talk to','Reading what the answers really mean'],o:'A validated problem, backed by interviews'},
+     h:['Interview scripts that don\'t lead the witness','Finding the right people to talk to','Reading what the answers really mean','AI tools that turn interview notes into insights'],o:'A validated problem, backed by interviews'},
     {n:'02',t:'Build',w:'Weeks 3–4',wk:[2,3],c:'var(--l2)',q:'What\'s the smallest thing that solves it?',
      d:['Design the simplest version','Build it with no-code tools or by hand','Put it in front of 5 real users'],
-     h:['Cutting scope to what matters','Picking tools you can ship with this week','Testing without writing code'],o:'A working MVP or pilot offer'},
+     h:['Cutting scope to what matters','Picking tools you can ship with this week','Testing without writing code','AI and no-code builders to ship without engineers'],o:'A working MVP or pilot offer'},
     {n:'03',t:'Sell',w:'Weeks 5–6',wk:[4,5],c:'var(--l3)',q:'Will someone actually pay for it?',
      d:['Write your first outreach','Book and run 10 sales calls','Ask for the money, even if it\'s small'],
-     h:['Cold messages that get replies','Live call practice with feedback','Handling "not now" and "too expensive"'],o:'Your first paying customer or signed pilot'},
+     h:['Cold messages that get replies','Live call practice with feedback','Handling "not now" and "too expensive"','AI prospecting and personalized outreach'],o:'Your first paying customer or signed pilot'},
     {n:'04',t:'Pitch',w:'Weeks 7–8',wk:[6,7],c:'color-mix(in srgb,var(--acc) 35%,transparent)',q:'Are you ready to pitch real investors?',
      d:['Set your pricing and basic numbers','Build a 10-slide deck','Rehearse until it feels easy'],
-     h:['A story built on what you learned','Pitch rehearsals with mentors','Matching you with the right investors'],o:'A live pitch to investors on Demo Day'}
+     h:['A story built on what you learned','Pitch rehearsals with mentors','Matching you with the right investors','AI help drafting your deck and numbers'],o:'A live pitch to investors on Demo Day'}
   ];
   var tabs=$('#tabs'),panel=$('#panel'),bars=$$('#track i'),idx=0,timer=null,auto=!reduce;
   LABS.forEach(function(L,i){var b=document.createElement('button');b.className='tab';b.id='tab'+i;b.setAttribute('role','tab');b.setAttribute('aria-controls','panel');
@@ -499,6 +551,34 @@ footer small{color:var(--ink-3);font-size:13px}
   }
   show(0);
   panel.addEventListener('pointerenter',function(){auto=false;clearTimeout(timer);$$('.tm',tabs).forEach(function(t){t.classList.remove('run');});});
+
+  /* ai toolkit */
+  var IC={r:'<path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-4.3-4.3"/>',b:'<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 10l-2 2 2 2M16 10l2 2-2 2M13 9l-2 6"/>',s:'<path d="M4 12l16-8-6 16-2.5-6.5z"/>',p:'<path d="M3 20h18M6 16V9M11 16V5M16 16v-6M21 16V8"/>'};
+  var TOOLS=[
+    {k:'r',t:'Research assistant',lab:'Lab 01',d:'Turns interview notes into patterns, pains, and quotes in minutes.',
+     q:'Summarize my 12 customer interviews. What pain comes up most?',
+     a:'Top pain (8 of 12): clinic owners lose hours every week confirming appointments by phone.\nSecond (5 of 12): no-shows, with no reminder system in place.\nQuote worth keeping: "I\'d pay just to stop calling people back."\nNext step: test a WhatsApp reminder pilot with 3 clinics.'},
+    {k:'b',t:'No-code + AI builder',lab:'Lab 02',d:'Plan and ship a working MVP without hiring a developer.',
+     q:'Plan the smallest MVP I can ship this week without a developer.',
+     a:'Day 1: Landing page with a sign-up form.\nDay 2: Automatic reminder flow with a no-code tool.\nDay 3 to 4: Onboard 3 pilot clinics by hand.\nDay 5: Compare no-shows before and after.'},
+    {k:'s',t:'Outreach engine',lab:'Lab 03',d:'Find the right prospects and write messages that get replies.',
+     q:'Write a short cold message to a dental clinic owner.',
+     a:'Hi Dr. Haddad, quick one. Most clinics I speak with lose hours a week chasing confirmations.\nWe\'re piloting automatic WhatsApp reminders with 3 clinics in Beirut, free for a month.\nWorth a 10-minute look this week?'},
+    {k:'p',t:'Pitch coach',lab:'Lab 04',d:'Drafts your deck, pressure-tests your numbers, and runs mock Q&A.',
+     q:'Turn my pilot results into a 3-line pitch opener.',
+     a:'Clinics lose real money every week to no-shows.\nOur pilot cut no-shows at 3 clinics in 4 weeks, and 2 of them now pay us.\nWe\'re raising a pre-seed round to reach 100 clinics.'}
+  ];
+  var tools=$('#tools'),aiQ=$('#aiQ'),aiA=$('#aiA'),typeT=null;
+  TOOLS.forEach(function(T,i){var b=document.createElement('button');b.className='tool';b.setAttribute('aria-pressed',i===0?'true':'false');
+    b.innerHTML='<div class="tt"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+IC[T.k]+'</svg></span><span class="lb">'+T.lab+'</span></div><h3>'+T.t+'</h3><p>'+T.d+'</p>';
+    b.addEventListener('click',function(){pick(i,true);});tools.appendChild(b);});
+  function pick(i,animate){var T=TOOLS[i];
+    $$('.tool',tools).forEach(function(b,j){b.setAttribute('aria-pressed',j===i?'true':'false');});
+    $('#winTitle').textContent='4 Labs AI · '+T.t;aiQ.textContent=T.q;clearInterval(typeT);
+    if(!animate||reduce){aiA.textContent=T.a;aiA.classList.remove('typing');return;}
+    var n=0;aiA.textContent='';aiA.classList.add('typing');
+    typeT=setInterval(function(){n+=3;aiA.textContent=T.a.slice(0,n);if(n>=T.a.length){clearInterval(typeT);aiA.classList.remove('typing');}},18);}
+  pick(0,false);
 
   /* week budget */
   var SEG=[{t:'Lab workshop',m:60,c:'var(--acc)'},{t:'Mentor 1:1',m:30,c:'var(--acc-2)'},{t:'Founder circle',m:45,c:'color-mix(in srgb,var(--acc) 35%,var(--l3))'},{t:'Ship log',m:10,c:'var(--l2)'},{t:'Your own work',m:215,c:'repeating-linear-gradient(135deg,var(--bg-2) 0 6px,var(--line) 6px 8px)'}];
@@ -530,6 +610,7 @@ footer small{color:var(--ink-3);font-size:13px}
   /* faq */
   var F=[['Is it really free?','Yes. No fee and no equity. Our job is to get you ready and put you in front of investors.'],
     ['Will I actually meet investors?','Yes. Demo Day is a live online pitch to angels and VCs from our network. We follow up with warm intros to every investor who wants to talk. The raise itself is between you and them.'],
+    ['What AI tools do I get?','The 4 Labs AI toolkit: the tools, prompts, and templates we use for customer research, building an MVP without engineers, outreach, and pitch prep. We set you up in week one and show you how to use each one.'],
     ['Do I need a cofounder?','No. Solo founders are welcome. If you meet someone great in the cohort, even better.'],
     ['Do I need a product already?','No. An idea you care about is enough. Lab 2 is where you build the first version.'],
     ['I\'m a student. Can I apply?','Yes. The program is built to fit around classes or a job. Plan on about 6 hours a week.'],
