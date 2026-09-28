@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="4 Labs is an accelerator for pre-seed and seed B2B startups: capital, build, network, and mentors.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}</style>
+<title>4 Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F4F1; --bg-2:#E8EAE5; --ink:#0F1214; --ink-2:#555C60; --line:#CDD1CB; --grid:rgba(15,18,20,.06);
+  --acc:#2743F0; --acc-ink:#FFFFFF; --acc-soft:#E2E6FD; --tile:#FAFBF8;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --sans:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0D0F11; --bg-2:#14171A; --ink:#ECEEEA; --ink-2:#9AA1A5; --line:#2A2F33; --grid:rgba(236,238,234,.05);
+  --acc:#7D8EFF; --acc-ink:#0D0F11; --acc-soft:#1A2046; --tile:#121518; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0D0F11; --bg-2:#14171A; --ink:#ECEEEA; --ink-2:#9AA1A5; --line:#2A2F33; --grid:rgba(236,238,234,.05);
+  --acc:#7D8EFF; --acc-ink:#0D0F11; --acc-soft:#1A2046; --tile:#121518; color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+.mono{font:500 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 19px/1 var(--display)}
+.logo i{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:22px;height:22px}
+.logo i b{background:var(--ink);border-radius:1px}
+.logo i b:nth-child(4){background:var(--acc)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.nav-links{display:flex;gap:22px;font-size:14px}
+.nav-links a{text-decoration:none;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+@media (max-width:720px){.nav-links{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:var(--acc-ink);border:0;border-radius:6px;padding:12px 18px;font:600 14px/1 var(--sans);text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.sm{padding:9px 14px;font-size:13px}
+.tg{background:none;border:1px solid var(--line);border-radius:6px;width:36px;height:36px;display:grid;place-items:center}
+.tg svg{width:16px;height:16px}
+
+/* hero */
+.hero{padding-block:56px 64px;display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding-block:40px 48px}}
+.hero h1{font-size:clamp(44px,7.4vw,86px);line-height:.95;letter-spacing:-.035em;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p.lede{font-size:19px;line-height:1.5;color:var(--ink-2);max-width:48ch;margin:22px 0 28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.status{display:inline-flex;align-items:center;gap:8px;margin-bottom:20px}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--acc-soft)}
+
+/* quad */
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:6px;aspect-ratio:1;max-width:100%}
+.q{background:var(--tile);border:1px solid var(--line);border-radius:4px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;transition:background .25s,color .25s,border-color .25s}
+.q .n{font:500 12px var(--mono);color:var(--ink-2)}
+.q h3{font-size:clamp(22px,3.4vw,32px);font-weight:600;letter-spacing:-.02em}
+.q:hover,.q.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.q:hover .n,.q.on .n{color:inherit;opacity:.6}
+.q.four{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.q.four .n{color:inherit;opacity:.7}
+
+/* sections */
+section.block{padding-block:72px;border-top:1px solid var(--line)}
+.sh{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:40px}
+@media (max-width:720px){.sh{grid-template-columns:1fr;gap:10px}}
+.sh h2{font-size:clamp(30px,4.6vw,48px);line-height:1.02;letter-spacing:-.03em;font-weight:650}
+.sh p{grid-column:2;margin:14px 0 0;color:var(--ink-2);max-width:56ch;font-size:17px}
+@media (max-width:720px){.sh p{grid-column:1}}
+
+/* labs detail */
+.labs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:720px){.labs{grid-template-columns:1fr}}
+.lab{background:var(--bg);padding:28px;display:flex;flex-direction:column;gap:14px}
+.lab .top{display:flex;justify-content:space-between;align-items:baseline}
+.lab h3{font-size:28px;font-weight:650;letter-spacing:-.02em}
+.lab .tag{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+.lab p{margin:0;color:var(--ink-2);max-width:48ch}
+.lab ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.lab li{display:flex;gap:10px}
+.lab li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;background:var(--acc)}
+
+/* fit */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:720px){.fit{grid-template-columns:1fr}}
+.col{border:1px solid var(--line);border-radius:4px;padding:24px;background:var(--tile)}
+.col h3{font-size:20px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.col h3 span{font:500 11px var(--mono);letter-spacing:.1em;padding:4px 7px;border-radius:3px}
+.yes span{background:var(--acc-soft);color:var(--acc)}
+.no span{background:var(--bg-2);color:var(--ink-2)}
+.col ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;color:var(--ink-2)}
+.col li::marker{color:var(--ink-2)}
+.sectors{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{font:500 12px var(--mono);border:1px solid var(--line);padding:8px 12px;border-radius:999px;background:var(--bg)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.step{padding:22px 22px 26px 0;border-top:2px solid var(--ink);display:flex;flex-direction:column;gap:10px;counter-increment:s}
+.step::before{content:"0" counter(s);font:500 13px var(--mono);color:var(--acc)}
+.step h3{font-size:21px;font-weight:600}
+.step p{margin:0;color:var(--ink-2);font-size:15px;max-width:30ch}
+
+/* founder */
+.founder{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+@media (max-width:720px){.founder{grid-template-columns:1fr;gap:24px}}
+.ph{aspect-ratio:4/5;max-width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:4px;display:grid;place-items:center;font:700 64px var(--display);color:var(--ink-2);letter-spacing:-.04em}
+.founder h3{font-size:34px;font-weight:650;letter-spacing:-.02em}
+.founder .role{margin:6px 0 18px}
+.founder p{margin:0 0 14px;color:var(--ink-2);max-width:60ch}
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0}
+@media (max-width:520px){.creds{grid-template-columns:1fr 1fr}}
+.cred{background:var(--bg);padding:14px}
+.cred b{display:block;font:650 26px/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.cred span{font-size:13px;color:var(--ink-2)}
+.net{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+
+/* apply */
+.apply{background:var(--ink);color:var(--bg);border-radius:6px;padding:48px 32px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end}
+@media (max-width:760px){.apply{grid-template-columns:1fr;padding:36px 22px}}
+.apply h2{font-size:clamp(34px,5.4vw,58px);line-height:.98;letter-spacing:-.03em;font-weight:700}
+.apply p{margin:16px 0 0;opacity:.72;max-width:44ch}
+.apply .acts{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.apply .btn.ghost{color:var(--bg);border-color:var(--bg)}
+.mail{font:400 14px var(--mono);user-select:all;opacity:.85}
+.toast{font:400 12px var(--mono);min-height:1em;color:var(--acc)}
+
+footer{padding-block:36px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid var(--line);margin-top:72px}
+footer a{text-decoration:none;color:var(--ink-2)}
+footer .fl{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="4 Labs home"><i><b></b><b></b><b></b><b></b></i>4 Labs</a>
+    <div class="nav-r">
+      <div class="nav-links"><a href="#labs">The labs</a><a href="#fit">Who it's for</a><a href="#how">How it works</a><a href="#founder">Founder</a></div>
+      <button class="tg" id="tg" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg></button>
+      <a class="btn sm" href="#apply">Apply</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <div>
+      <div class="status mono">Applications open</div>
+      <h1>Four labs.<br>One job: get B2B founders to <em>revenue.</em></h1>
+      <p class="lede">4 Labs is an accelerator for pre-seed and seed B2B startups. We give founders the four things early companies run out of first: capital, product build, network, and operators who have done it.</p>
+      <div class="ctas"><a class="btn" href="#apply">Apply to 4 Labs</a><a class="btn ghost" href="#labs">See the labs</a></div>
+    </div>
+    <div class="quad" id="quad" aria-label="The four labs">
+      <a class="q" href="#lab-capital"><span class="n">L1</span><h3>Capital</h3></a>
+      <a class="q" href="#lab-build"><span class="n">L2</span><h3>Build</h3></a>
+      <a class="q" href="#lab-network"><span class="n">L3</span><h3>Network</h3></a>
+      <a class="q four" href="#lab-mentor"><span class="n">L4</span><h3>Mentors</h3></a>
+    </div>
+  </header>
+
+  <section class="block" id="labs">
+    <div class="sh"><span class="mono">The labs</span><div><h2>Everything a seed-stage B2B company needs. Under one roof.</h2><p>Each lab runs on its own. Together they cover the gaps that kill early companies: no money, no product, no doors, no one who has been there.</p></div></div>
+    <div class="labs">
+      <article class="lab" id="lab-capital">
+        <div class="top"><h3>Capital</h3><span class="tag">L1</span></div>
+        <p>Selected companies can be considered for investment from Vanguard Frontier I, our early-stage fund.</p>
+        <ul><li>Investment consideration for top companies</li><li>Fundraising prep and investor narrative</li><li>Warm intros to aligned funds</li></ul>
+      </article>
+      <article class="lab" id="lab-build">
+        <div class="top"><h3>Build</h3><span class="tag">L2</span></div>
+        <p>Technical delivery through our build partners, so founders ship product without hiring a full engineering team on day one.</p>
+        <ul><li>MVP and product development</li><li>AI and automation implementation</li><li>Architecture reviews before you scale</li></ul>
+      </article>
+      <article class="lab" id="lab-network">
+        <div class="top"><h3>Network</h3><span class="tag">L3</span></div>
+        <p>Access to our partner and investor ecosystem across North America, the GCC, and MENA.</p>
+        <ul><li>Partner programs with leading B2B platforms</li><li>Introductions through LvlUp Ventures and Boardy</li><li>First-customer and channel intros</li></ul>
+      </article>
+      <article class="lab" id="lab-mentor">
+        <div class="top"><h3>Mentors</h3><span class="tag">L4</span></div>
+        <p>Operators, not advisors on paper. People who have built sales teams, closed deals, and scaled companies.</p>
+        <ul><li>Weekly go-to-market sessions</li><li>Sales playbook and pipeline reviews</li><li>1:1 time with the 4 Labs team</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="fit">
+    <div class="sh"><span class="mono">Who it's for</span><div><h2>Built for B2B founders at pre-seed and seed.</h2></div></div>
+    <div class="fit">
+      <div class="col yes"><h3>Good fit <span>YES</span></h3>
+        <ul><li>You sell to businesses, not consumers</li><li>Pre-seed or seed, with a product or a clear path to one</li><li>A founder who can sell, or wants to learn fast</li><li>Early signal: pilots, LOIs, or first revenue</li></ul></div>
+      <div class="col no"><h3>Not a fit <span>NO</span></h3>
+        <ul><li>Consumer apps and marketplaces</li><li>Series A and beyond</li><li>Ideas with no founder commitment</li><li>Teams looking only for a check</li></ul></div>
+    </div>
+    <div class="sectors" aria-label="Focus sectors"><span class="chip">B2B AI</span><span class="chip">Fintech</span><span class="chip">SaaS</span><span class="chip">Tech-enabled services</span></div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="sh"><span class="mono">How it works</span><div><h2>From application to program in four steps.</h2></div></div>
+    <ol class="steps">
+      <li class="step"><h3>Apply</h3><p>Send your deck and a short note on what you are building.</p></li>
+      <li class="step"><h3>Intro call</h3><p>30 minutes with the founder. We talk traction, team, and what you need.</p></li>
+      <li class="step"><h3>Program</h3><p>Work across the four labs with a plan built around your biggest gap.</p></li>
+      <li class="step"><h3>Investment</h3><p>Top companies are considered for a check from Vanguard Frontier I.</p></li>
+    </ol>
+  </section>
+
+  <section class="block" id="founder">
+    <div class="sh"><span class="mono">Founder</span><div><h2>Run by an operator who builds revenue engines.</h2></div></div>
+    <div class="founder">
+      <div class="ph" aria-hidden="true">AK</div>
+      <div>
+        <h3>Ayman Khalil</h3>
+        <div class="role mono">Founder, 4 Labs · Co-GP, Vanguard Frontier I</div>
+        <p>Seven years in sales. Co-founder and General Director of Vanguard Services, a Beirut-based AI-native BPO running outsourced SDR, sales, and support teams for international clients. Built its client base, team, and partner ecosystem from zero.</p>
+        <p>VC in Residence at LvlUp Ventures. Venture scout and advisory board member at Boardy. Scale Mentor at Bevisioneers. 4 Labs brings that work into one place for founders.</p>
+        <div class="creds">
+          <div class="cred"><b>7 yrs</b><span>in sales and team leadership</span></div>
+          <div class="cred"><b>22+</b><span>founder referrals via Boardy</span></div>
+          <div class="cred"><b>3</b><span>markets: NA, GCC, MENA</span></div>
+        </div>
+        <div class="net"><span class="chip">Vanguard Services</span><span class="chip">Vanguard Frontier I</span><span class="chip">LvlUp Ventures</span><span class="chip">Boardy</span><span class="chip">Bevisioneers</span></div>
+        <p style="margin-top:18px"><a href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener">LinkedIn ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="apply" style="border-top:0">
+    <div class="apply">
+      <div><h2>Building B2B? Apply to 4 Labs.</h2><p>Send your deck with "4 Labs" in the subject line, or book an intro call directly. We reply to every application.</p></div>
+      <div class="acts">
+        <a class="btn" href="https://calendly.com/ayman-vanguard-services" target="_blank" rel="noopener">Book an intro call</a>
+        <button class="btn ghost" id="copyMail">Copy application email</button>
+        <span class="mail">ayman@vanguard-services.co</span>
+        <span class="toast" id="toast" role="status"></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div><a class="logo" href="#top"><i><b></b><b></b><b></b><b></b></i>4 Labs</a><div class="mono" style="margin-top:10px">Beirut, Lebanon</div></div>
+    <div class="fl"><a href="#labs">The labs</a><a href="#fit">Who it's for</a><a href="#how">How it works</a><a href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener">LinkedIn</a></div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var r=document.documentElement;
+  function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
+  try{var s=localStorage.getItem('4l-theme');if(s)r.setAttribute('data-theme',s);}catch(e){}
+  document.getElementById('tg').addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('4l-theme',n);}catch(e){}});
+
+  var t=document.getElementById('toast'),tt;
+  document.getElementById('copyMail').addEventListener('click',function(){
+    var m='ayman@vanguard-services.co';
+    function say(x){t.textContent=x;clearTimeout(tt);tt=setTimeout(function(){t.textContent='';},2200);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(function(){say('Email copied');},function(){say(m);});}else{say(m);}
+  });
+
+  var qs=[].slice.call(document.querySelectorAll('.q:not(.four)')),i=0,paused=false;
+  var q=document.getElementById('quad');
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    q.addEventListener('mouseenter',function(){paused=true;qs.forEach(function(x){x.classList.remove('on');});});
+    q.addEventListener('mouseleave',function(){paused=false;});
+    setInterval(function(){if(paused)return;qs.forEach(function(x){x.classList.remove('on');});qs[i%qs.length].classList.add('on');i++;},1800);
+  }
+})();
+</script>
+</body>
+</html>
