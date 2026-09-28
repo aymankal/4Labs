@@ -275,7 +275,10 @@ section.sec{padding-block:96px 24px}
 .av.sm{width:44px;height:44px;font-size:15px}
 .fgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:stretch}
 @media (max-width:900px){.fgrid{grid-template-columns:1fr}}
-.portrait{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--solid);min-height:420px;display:flex}
+.portrait{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--solid);aspect-ratio:4/5;max-width:100%;align-self:start}
+.pf-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.portrait:hover .pf-photo,.fportrait:hover .pf-photo{transform:scale(1.03)}
+img.av{object-fit:cover;padding:0}
 .pf-img{flex:1;background:url("img/cohort-1920.webp") center/cover;display:grid;place-items:center;position:relative}
 .pf-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,color-mix(in srgb,var(--bg) 60%,transparent))}
 .pf-img span{position:relative;z-index:1;font:600 clamp(80px,12vw,140px)/1 var(--sans);letter-spacing:-.05em;color:var(--acc);opacity:.85;text-shadow:0 10px 40px color-mix(in srgb,var(--acc) 35%,transparent)}
@@ -590,11 +593,11 @@ footer small{color:var(--ink-3);font-size:13px}
       <figure class="bigq">
         <svg class="qm" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V22C0 9 7 1.5 20 0l2 5C14 7 11 11 11 17h9v19zm26 0V22C26 9 33 1.5 46 0l2 5c-8 2-11 6-11 12h9v19z" fill="currentColor"/></svg>
         <blockquote>Nobody handed me a playbook. I learned by picking up the phone and hearing no until I heard yes. <em class="s">4 Labs is the head start I never had.</em></blockquote>
-        <figcaption><span class="av sm" aria-hidden="true">AK</span><span><b>Ayman Khalil</b><small>Founder, 4 Labs</small></span></figcaption>
+        <figcaption><img class="av sm" src="img/ayman-sq.webp" width="240" height="240" alt=""><span><b>Ayman Khalil</b><small>Founder, 4 Labs</small></span></figcaption>
       </figure>
       <div class="fgrid">
         <div class="portrait">
-          <div class="pf-img" role="img" aria-label="Portrait placeholder for Ayman Khalil"><span>AK</span></div>
+          <img class="pf-photo" src="img/ayman.webp" width="1040" height="1300" alt="Ayman Khalil, founder of 4 Labs">
           <div class="plate"><div><b>Ayman Khalil</b><small>Founder, 4 Labs · Beirut</small></div><a class="icon-btn" href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener" aria-label="Ayman Khalil on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4V9.5Z"/></svg></a></div>
         </div>
         <div class="why">
@@ -649,7 +652,7 @@ footer small{color:var(--ink-3);font-size:13px}
       <div class="ftags"><span>Vanguard Services</span><span>LvlUp Ventures</span><span>Boardy</span><span>Bevisioneers</span></div>
     </div>
     <div class="fportrait">
-      <div class="pf" role="img" aria-label="Portrait placeholder for Ayman Khalil"><span>AK</span></div>
+      <img class="pf-photo" src="img/ayman.webp" width="1040" height="1300" alt="Ayman Khalil, founder of 4 Labs">
       <div class="fplate"><div><b>Ayman Khalil</b><small>Founder, 4 Labs</small></div><a class="icon-btn" href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4V9.5Z"/></svg></a></div>
     </div>
   </header>
