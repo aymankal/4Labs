@@ -3,349 +3,548 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="4 Labs is a free, 8-week remote program helping pre-seed, pre-revenue founders get to their first customer and pitch real investors. No equity.">
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="description" content="4 Labs is a free, 8-week remote program taking pre-seed, pre-revenue founders from idea to a live investor pitch. No equity.">
+<meta property="og:title" content="4 Labs">
+<meta property="og:description" content="From idea to investor pitch in eight weeks. Free, remote, no equity.">
+<meta property="og:image" content="https://aymankal.github.io/4Labs/img/hero-1920.webp">
+<style>html{scroll-behavior:smooth}body{margin:0}[hidden]{display:none!important}</style>
 <title>4 Labs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
 :root{
-  --bg:#FFFDF8; --bg-2:#F4F1FF; --ink:#1B1530; --ink-2:#5B5570; --line:#1B1530; --soft:#E6E2F0; --card:#FFFFFF;
-  --l1:#FF8A3D; --l2:#9BD84A; --l3:#56B0FF; --l4:#FF7AB8; --sun:#FFD43B;
-  --on:#1B1530; --shadow:#1B1530;
-  --display:"Bricolage Grotesque","Arial Rounded MT Bold",Arial,sans-serif;
-  --sans:"Figtree",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --bg:#F5F7FB; --bg-2:#ECF0F7; --surface:rgba(255,255,255,.72); --solid:#FFFFFF;
+  --ink:#0C1222; --ink-2:#56607A; --ink-3:#8C95AA; --line:#DDE3ED; --line-2:#C9D1DF;
+  --acc:#4F6BFF; --acc-ink:#FFFFFF; --acc-soft:#E6EBFF; --acc-2:#9FB2FF;
+  --l1:#DBE7FF; --l2:#E8E2FF; --l3:#CFF0FF; --l4:#4F6BFF;
+  --ok:#1F9D6B; --warn:#C98A12;
+  --glow:0 1px 0 rgba(255,255,255,.9) inset,0 12px 40px -18px rgba(38,56,120,.35);
+  --sans:"Geist",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --mono:"Geist Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#15112A; --bg-2:#1E1938; --ink:#F4F1FF; --ink-2:#B7B0CE; --line:#F4F1FF; --soft:#332C52; --card:#1E1938;
-  --shadow:#000000; color-scheme:dark;}}
+  --bg:#0A0E1A; --bg-2:#10162A; --surface:rgba(20,27,48,.72); --solid:#131A2E;
+  --ink:#EEF2FB; --ink-2:#A3ADC4; --ink-3:#6F7A93; --line:#222B45; --line-2:#2E3957;
+  --acc:#7B90FF; --acc-ink:#0A0E1A; --acc-soft:#1B2450; --acc-2:#4F6BFF;
+  --l1:#1C2A4D; --l2:#28234A; --l3:#15344A; --l4:#7B90FF;
+  --glow:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px -18px rgba(0,0,0,.6); color-scheme:dark;}}
 :root[data-theme="dark"]{
-  --bg:#15112A; --bg-2:#1E1938; --ink:#F4F1FF; --ink-2:#B7B0CE; --line:#F4F1FF; --soft:#332C52; --card:#1E1938;
-  --shadow:#000000; color-scheme:dark;}
+  --bg:#0A0E1A; --bg-2:#10162A; --surface:rgba(20,27,48,.72); --solid:#131A2E;
+  --ink:#EEF2FB; --ink-2:#A3ADC4; --ink-3:#6F7A93; --line:#222B45; --line-2:#2E3957;
+  --acc:#7B90FF; --acc-ink:#0A0E1A; --acc-soft:#1B2450; --acc-2:#4F6BFF;
+  --l1:#1C2A4D; --l2:#28234A; --l3:#15344A; --l4:#7B90FF;
+  --glow:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px -18px rgba(0,0,0,.6); color-scheme:dark;}
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(60% 50% at 85% 0%,color-mix(in srgb,var(--acc) 10%,transparent),transparent 70%),radial-gradient(50% 40% at 0% 30%,color-mix(in srgb,var(--l3) 60%,transparent),transparent 70%)}
 a{color:inherit}
-button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--l3);outline-offset:3px}
-.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
-h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em}
-.eyebrow{display:inline-block;font:700 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;border:2px solid var(--line);border-radius:999px;background:var(--card)}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:20px}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.03em;text-wrap:balance}
+em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--acc)}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.muted{color:var(--ink-2)}
 
 /* nav */
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 21px/1 var(--display)}
-.logo i{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:26px;height:26px}
-.logo i b{border-radius:50%}
-.logo i b:nth-child(1){background:var(--l1)}.logo i b:nth-child(2){background:var(--l2)}
-.logo i b:nth-child(3){background:var(--l3)}.logo i b:nth-child(4){background:var(--l4)}
-.nav-r{display:flex;align-items:center;gap:10px}
-.nav-links{display:flex;gap:22px;font-weight:600;font-size:15px}
-.nav-links a{text-decoration:none;color:var(--ink-2)}
-.nav-links a:hover{color:var(--ink)}
-@media (max-width:820px){.nav-links{display:none}}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:var(--on);border:2px solid var(--line);border-radius:14px;padding:13px 20px;font:700 16px/1 var(--sans);text-decoration:none;box-shadow:4px 4px 0 var(--shadow);transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--shadow)}
-.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
-.btn.alt{background:var(--card);color:var(--ink)}
-.btn.sm{padding:10px 14px;font-size:14px;border-radius:12px;box-shadow:3px 3px 0 var(--shadow)}
-.tg{background:var(--card);border:2px solid var(--line);border-radius:12px;width:40px;height:40px;display:grid;place-items:center}
-.tg svg{width:18px;height:18px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding-block:12px}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid var(--line);border-radius:16px;padding:8px 8px 8px 16px;box-shadow:var(--glow);position:relative;overflow:hidden}
+.prog{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--acc);transition:width .1s linear}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:650 18px/1 var(--sans);letter-spacing:-.02em}
+.mark{width:24px;height:24px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.mark b{border-radius:50%;background:var(--line-2)}
+.mark b:nth-child(4){background:var(--acc)}
+.links{display:flex;gap:4px}
+.links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-2);padding:8px 12px;border-radius:10px;transition:background .2s,color .2s}
+.links a:hover{color:var(--ink);background:var(--bg-2)}
+.links a.on{color:var(--ink);background:var(--bg-2)}
+@media (max-width:900px){.links{display:none}}
+.nr{display:flex;gap:8px;align-items:center}
+.icon-btn{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:var(--ink-2);border:1px solid var(--line)}
+.icon-btn:hover{color:var(--ink);background:var(--bg-2)}
+.icon-btn svg{width:17px;height:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:13px 20px;font:550 15px/1 var(--sans);text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn.pri{background:var(--ink);color:var(--bg);box-shadow:0 8px 24px -10px rgba(12,18,34,.5)}
+.btn.pri:hover{transform:translateY(-1px);box-shadow:0 12px 28px -10px rgba(12,18,34,.55)}
+.btn.acc{background:var(--acc);color:var(--acc-ink);box-shadow:0 10px 26px -10px color-mix(in srgb,var(--acc) 70%,transparent)}
+.btn.acc:hover{transform:translateY(-1px)}
+.btn.sec{background:var(--solid);border:1px solid var(--line);color:var(--ink)}
+.btn.sec:hover{border-color:var(--line-2)}
+.btn.sm{padding:10px 14px;font-size:14px;border-radius:10px}
+.btn svg{width:16px;height:16px;transition:transform .2s}
+.btn:hover svg{transform:translateX(2px)}
 
 /* hero */
-.hero{padding-block:48px 56px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-@media (max-width:880px){.hero{grid-template-columns:1fr;padding-block:28px 40px}}
-.hero h1{font-size:clamp(42px,7vw,80px);line-height:.98;font-weight:800;margin-top:18px}
-.hl{position:relative;white-space:nowrap}
-.hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:.06em;height:.32em;background:var(--sun);z-index:-1;border-radius:6px;transform:rotate(-1deg)}
-.hero h1{position:relative;z-index:0}
-.lede{font-size:20px;color:var(--ink-2);max-width:46ch;margin:20px 0 28px}
-.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero{padding-block:48px 24px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:500;box-shadow:var(--glow);text-decoration:none}
+.pill .dot{width:22px;height:22px;border-radius:50%;background:var(--acc-soft);display:grid;place-items:center}
+.pill .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--acc) 50%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(44px,7.6vw,100px);line-height:.98;margin:26px 0 22px;max-width:14ch}
+.hero .lede{font-size:clamp(18px,2vw,21px);max-width:54ch;margin:0 0 30px;color:var(--ink-2)}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:26px;font-size:14px;color:var(--ink-2)}
+.trust span{display:inline-flex;align-items:center;gap:7px}
+.trust svg{width:15px;height:15px;color:var(--acc)}
 
-.play{position:relative;aspect-ratio:1/1;max-width:100%;width:100%}
-.blob{position:absolute;border:2px solid var(--line);display:grid;place-items:center;text-align:center;font:800 clamp(18px,2.6vw,26px)/1.05 var(--display);color:var(--on);box-shadow:5px 5px 0 var(--shadow);transition:transform .3s}
-.blob small{display:block;font:600 12px/1.2 var(--sans);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px;opacity:.75}
-.b1{background:var(--l1);left:2%;top:4%;width:46%;height:44%;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;transform:rotate(-4deg)}
-.b2{background:var(--l2);right:2%;top:10%;width:44%;height:40%;border-radius:24px;transform:rotate(5deg)}
-.b3{background:var(--l3);left:6%;bottom:6%;width:42%;height:42%;border-radius:50%;transform:rotate(3deg)}
-.b4{background:var(--l4);right:4%;bottom:2%;width:46%;height:44%;border-radius:55% 45% 40% 60%/45% 55% 45% 55%;transform:rotate(-6deg)}
-.play:hover .b1{transform:rotate(2deg) scale(1.03)}.play:hover .b2{transform:rotate(-2deg) scale(1.03)}
-.play:hover .b3{transform:rotate(-4deg) scale(1.03)}.play:hover .b4{transform:rotate(2deg) scale(1.03)}
-.sticker{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);background:var(--sun);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:12px 16px;font:800 15px/1 var(--display);box-shadow:3px 3px 0 var(--shadow);white-space:nowrap;z-index:2}
+.stage{position:relative;margin-top:44px;border-radius:28px;border:1px solid var(--line);background:var(--solid);box-shadow:0 40px 80px -40px rgba(38,56,120,.35);overflow:hidden;perspective:1200px}
+.stage img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.chip{position:absolute;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:var(--surface);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:var(--glow);text-align:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.chip b{display:block;font-size:14px;font-weight:600}
+.chip small{display:block;font-size:12px;color:var(--ink-2)}
+.chip .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none}
+.chip .ic svg{width:18px;height:18px}
+.c1{left:4%;top:9%}.c1 .ic{background:var(--l1);color:var(--acc)}
+.c2{right:4%;top:40%}.c2 .ic{background:var(--acc);color:var(--acc-ink)}
+.c3{left:9%;bottom:8%}.c3 .ic{background:var(--l3);color:var(--acc)}
+.bar{width:120px;height:6px;border-radius:9px;background:var(--bg-2);margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:62%;background:var(--acc);border-radius:9px}
+@media (max-width:640px){.stage img{aspect-ratio:4/3}.c2,.c3{display:none}.chip{padding:9px 12px;gap:9px}.chip .ic{width:28px;height:28px}.c1{top:auto;bottom:12px;left:12px}.bar{width:90px}.stage .ex{top:12px;bottom:auto}}
+.stage .ex{position:absolute;right:14px;bottom:12px;font:500 11px var(--mono);color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
 
-/* facts */
-.facts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-block:8px 20px}
-.fact{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:999px;padding:10px 16px;font-weight:700;background:var(--card)}
-.fact::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:20px;background:var(--surface);margin-top:28px;box-shadow:var(--glow);overflow:hidden}
+.stat{padding:22px 20px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:600 clamp(28px,3.4vw,40px)/1 var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--ink-2)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat{border-left:0;border-top:1px solid var(--line)}.stat:nth-child(-n+2){border-top:0}.stat:nth-child(even){border-left:1px solid var(--line)}.stat:last-child{grid-column:1/-1;border-left:0}}
 
-/* section */
-section.block{padding-block:72px}
-.sh{max-width:720px;margin-bottom:40px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.sh h2{font-size:clamp(34px,5vw,56px);line-height:1;font-weight:800}
-.sh p{margin:0;color:var(--ink-2);font-size:19px;max-width:56ch}
+/* sections */
+section.sec{padding-block:96px 24px}
+.head{display:flex;flex-direction:column;gap:14px;max-width:760px;margin-bottom:40px}
+.head h2{font-size:clamp(34px,5vw,60px);line-height:1.02}
+.head p{margin:0;font-size:19px;color:var(--ink-2);max-width:58ch}
+.head.center{margin-inline:auto;text-align:center;align-items:center}
 
-/* promise */
-.promise{background:var(--bg-2);border:2px solid var(--line);border-radius:28px;padding:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-@media (max-width:820px){.promise{grid-template-columns:1fr;padding:26px}}
-.pr h3{font-size:24px;font-weight:800;margin-bottom:8px}
-.pr p{margin:0;color:var(--ink-2)}
-.pr .ic{width:44px;height:44px;border-radius:12px;border:2px solid var(--line);display:grid;place-items:center;margin-bottom:14px;font:800 20px var(--display);color:var(--on)}
-
-/* labs timeline */
-.labs{display:flex;flex-direction:column;gap:18px}
-.lab{display:grid;grid-template-columns:220px 1fr;border:2px solid var(--line);border-radius:24px;overflow:hidden;background:var(--card);box-shadow:6px 6px 0 var(--shadow)}
-@media (max-width:760px){.lab{grid-template-columns:1fr}}
-.lab-side{background:var(--c);color:var(--on);padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;border-right:2px solid var(--line)}
-@media (max-width:760px){.lab-side{border-right:0;border-bottom:2px solid var(--line)}}
-.lab-side .wk{font:700 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase}
-.lab-side h3{font-size:40px;font-weight:800;line-height:.95}
-.lab-side .num{font:800 64px/.8 var(--display);opacity:.25}
-.lab-body{padding:24px 26px;display:grid;grid-template-columns:1fr 1fr;gap:20px 28px}
-@media (max-width:620px){.lab-body{grid-template-columns:1fr}}
-.lab-body .q{grid-column:1/-1;font:700 22px/1.25 var(--display);margin:0}
-.lab-body h4{margin:0 0 8px;font:700 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-.lab-body ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
-.out{grid-column:1/-1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:2px dashed var(--soft);padding-top:16px;font-weight:600}
-.out span{background:var(--c);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:700}
-.demo{margin-top:6px;border:2px solid var(--line);border-radius:24px;background:var(--sun);color:var(--on);padding:28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;box-shadow:6px 6px 0 var(--shadow)}
-.demo h3{font-size:34px;font-weight:800}
-.demo p{margin:6px 0 0;max-width:54ch}
+/* program */
+.track{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-bottom:10px}
+.track i{height:8px;border-radius:9px;background:var(--line);transition:background .35s}
+.track i.on{background:var(--acc)}
+.track i.done{background:var(--acc-2)}
+.weeks{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-bottom:26px}
+.weeks span{font:500 11px var(--mono);color:var(--ink-3);text-align:center}
+.prog-grid{display:grid;grid-template-columns:320px 1fr;gap:20px}
+@media (max-width:900px){.prog-grid{grid-template-columns:1fr}}
+.tabs{display:flex;flex-direction:column;gap:8px}
+@media (max-width:900px){.tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.tabs::-webkit-scrollbar{display:none}}
+.tab{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;border:1px solid transparent;text-align:left;transition:background .25s,border-color .25s;position:relative;overflow:hidden;flex:none}
+.tab:hover{background:var(--surface)}
+.tab[aria-selected="true"]{background:var(--solid);border-color:var(--line);box-shadow:var(--glow)}
+.tab .n{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font:500 13px var(--mono);background:var(--bg-2);color:var(--ink-2);flex:none;transition:background .25s,color .25s}
+.tab[aria-selected="true"] .n{background:var(--acc);color:var(--acc-ink)}
+.tab b{display:block;font-size:16px;font-weight:600}
+.tab small{display:block;font-size:13px;color:var(--ink-3)}
+.tab .tm{position:absolute;left:0;bottom:0;height:2px;background:var(--acc);width:0}
+.tab[aria-selected="true"] .tm.run{animation:tm 7s linear forwards}
+@keyframes tm{to{width:100%}}
+.panel{border:1px solid var(--line);border-radius:24px;background:var(--solid);box-shadow:var(--glow);padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:26px 32px;min-height:420px;position:relative;overflow:hidden}
+@media (max-width:640px){.panel{grid-template-columns:1fr;padding:22px}}
+.panel::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:var(--pc,var(--l1));filter:blur(40px);opacity:.7;pointer-events:none;transition:background .4s}
+.panel>*{position:relative;z-index:1}
+.panel .top{grid-column:1/-1;display:flex;flex-direction:column;gap:10px}
+.panel h3{font-size:clamp(28px,3.4vw,40px);line-height:1.05}
+.panel .q{font-size:19px;color:var(--ink-2);margin:0}
+.panel h4{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.panel ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.panel li{display:flex;gap:10px;align-items:flex-start}
+.panel li svg{flex:none;width:18px;height:18px;margin-top:4px;color:var(--acc)}
+.deliv{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:var(--bg-2);border:1px solid var(--line)}
+.deliv .ic{width:40px;height:40px;border-radius:12px;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;flex:none}
+.deliv .ic svg{width:20px;height:20px}
+.deliv small{display:block;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.deliv b{font-weight:600}
+.panel .fade{animation:fade .45s ease}
+@keyframes fade{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ctrl{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
 
 /* week */
-.week{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media (max-width:900px){.week{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.week{grid-template-columns:1fr}}
-.day{border:2px solid var(--line);border-radius:20px;padding:20px;background:var(--card);display:flex;flex-direction:column;gap:8px}
-.day .d{font:700 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-.day h3{font-size:22px;font-weight:800}
-.day p{margin:0;color:var(--ink-2);font-size:15px}
-.day .t{margin-top:auto;align-self:flex-start;font:700 13px var(--sans);background:var(--bg-2);border-radius:999px;padding:6px 10px}
-.hours{margin-top:18px;color:var(--ink-2);font-weight:600}
+.week-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:stretch}
+@media (max-width:900px){.week-grid{grid-template-columns:1fr}}
+.days{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.days{grid-template-columns:1fr}}
+.day{border:1px solid var(--line);border-radius:20px;background:var(--solid);padding:20px;display:flex;flex-direction:column;gap:6px;text-align:left;transition:border-color .2s,transform .2s,box-shadow .2s}
+.day:hover,.day.on{border-color:var(--acc);transform:translateY(-2px);box-shadow:var(--glow)}
+.day .d{display:flex;justify-content:space-between;align-items:center}
+.day .d span{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.day .d em{font:500 12px var(--mono);font-style:normal;color:var(--acc);background:var(--acc-soft);padding:4px 8px;border-radius:999px}
+.day h3{font-size:21px}
+.day p{margin:0;font-size:15px;color:var(--ink-2)}
+.budget{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:24px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--glow)}
+.budget h3{font-size:22px}
+.stack{display:flex;height:44px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.stack i{display:block;height:100%;transition:filter .2s,flex-basis .4s}
+.stack i.hl{filter:brightness(.92) saturate(1.3)}
+.legend{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.legend li{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:center;font-size:15px;padding:4px 6px;border-radius:8px;transition:background .2s}
+.legend li.hl{background:var(--bg-2)}
+.legend i{width:12px;height:12px;border-radius:4px}
+.legend b{font:500 14px var(--mono);font-variant-numeric:tabular-nums}
+.total{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;font-weight:600}
 
 /* fit */
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media (max-width:760px){.fit{grid-template-columns:1fr}}
-.col{border:2px solid var(--line);border-radius:24px;padding:26px;background:var(--card)}
-.col.yes{background:color-mix(in srgb,var(--l2) 22%,var(--card))}
-.col h3{font-size:26px;font-weight:800;margin-bottom:14px}
-.col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
-.col li{display:flex;gap:10px;align-items:flex-start}
-.col li b{flex:none;width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;line-height:1;background:var(--card)}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:900px){.fit-grid{grid-template-columns:1fr}}
+.checks{display:flex;flex-direction:column;gap:10px}
+.check{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:var(--solid);text-align:left;transition:border-color .2s,background .2s}
+.check:hover{border-color:var(--line-2)}
+.check .bx{width:24px;height:24px;border-radius:8px;border:1.5px solid var(--line-2);display:grid;place-items:center;flex:none;transition:background .2s,border-color .2s}
+.check .bx svg{width:14px;height:14px;color:var(--acc-ink);opacity:0;transform:scale(.6);transition:opacity .2s,transform .2s}
+.check[aria-checked="true"]{border-color:var(--acc);background:color-mix(in srgb,var(--acc-soft) 60%,var(--solid))}
+.check[aria-checked="true"] .bx{background:var(--acc);border-color:var(--acc)}
+.check[aria-checked="true"] .bx svg{opacity:1;transform:none}
+.result{border:1px solid var(--line);border-radius:24px;background:var(--solid);padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--glow);position:relative;overflow:hidden}
+.gauge{position:relative;width:100%;max-width:260px;aspect-ratio:2/1;margin-inline:auto}
+.gauge svg{width:100%;height:auto;overflow:visible}
+.gauge .val{position:absolute;left:0;right:0;bottom:0;text-align:center}
+.gauge .val b{font:600 44px/1 var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.gauge .val span{font-size:14px;color:var(--ink-3)}
+.result h3{font-size:24px;text-align:center}
+.result p{margin:0;text-align:center;color:var(--ink-2)}
+.result .btn{align-self:center}
+
+/* demo */
+.demo{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;align-items:stretch}
+@media (max-width:900px){.demo{grid-template-columns:1fr}}
+.pic{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--solid);position:relative}
+.pic img{width:100%;height:100%;object-fit:cover;min-height:320px}
+.pic .tag{position:absolute;left:16px;top:16px;background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.card{border:1px solid var(--line);border-radius:24px;background:var(--solid);padding:32px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--glow)}
+.card h3{font-size:clamp(28px,3vw,36px);line-height:1.05}
+.flow{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.flow li{display:grid;grid-template-columns:36px 1fr;gap:14px;padding-block:12px;position:relative}
+.flow li:not(:last-child)::before{content:"";position:absolute;left:17px;top:46px;bottom:-4px;width:1.5px;background:var(--line)}
+.flow .n{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--acc);color:var(--acc);display:grid;place-items:center;font:500 13px var(--mono);background:var(--solid)}
+.flow b{display:block;font-weight:600}
+.flow span{font-size:15px;color:var(--ink-2)}
 
 /* founder */
-.founder{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:center;border:2px solid var(--line);border-radius:28px;padding:32px;background:var(--bg-2)}
-@media (max-width:760px){.founder{grid-template-columns:1fr;padding:24px}}
-.ph{aspect-ratio:1/1;max-width:240px;width:100%;border-radius:50%;border:2px solid var(--line);background:var(--l3);display:grid;place-items:center;font:800 64px var(--display);color:var(--on);box-shadow:5px 5px 0 var(--shadow)}
-.founder h3{font-size:34px;font-weight:800}
-.founder .role{font-weight:700;color:var(--ink-2);margin:4px 0 16px}
-.founder p{margin:0 0 12px;color:var(--ink-2);max-width:60ch}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.tag{border:2px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600;background:var(--card)}
+.who{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
+@media (max-width:900px){.who{grid-template-columns:1fr}}
+.who .pic img{aspect-ratio:1/1;min-height:0}
+.fcard{border:1px solid var(--line);border-radius:24px;background:var(--solid);padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--glow)}
+.fhead{display:flex;align-items:center;gap:16px}
+.av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--l1),var(--l2));border:1px solid var(--line);display:grid;place-items:center;font:600 20px var(--sans);color:var(--acc);flex:none}
+.fhead h3{font-size:26px}
+.fhead small{font-size:14px;color:var(--ink-3)}
+.fcard p{margin:0;color:var(--ink-2)}
+.quote{font:400 26px/1.25 var(--serif);font-style:italic;color:var(--ink);border-left:2px solid var(--acc);padding-left:16px}
+.orgs{display:flex;flex-wrap:wrap;gap:8px}
+.orgs span{font-size:13px;font-weight:500;padding:7px 12px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line)}
 
 /* faq */
-.faq{display:flex;flex-direction:column;gap:12px;max-width:820px}
-details{border:2px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
-summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font:700 19px/1.3 var(--display)}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font:700 18px/1 var(--sans);transition:transform .2s,background .2s}
-details[open] summary::after{transform:rotate(45deg);background:var(--sun);color:var(--on)}
-details p{margin:0;padding:0 22px 20px;color:var(--ink-2)}
+.faq{max-width:840px;margin-inline:auto;display:flex;flex-direction:column;gap:10px}
+.qa{border:1px solid var(--line);border-radius:18px;background:var(--solid);overflow:hidden;transition:border-color .2s}
+.qa.open{border-color:var(--line-2);box-shadow:var(--glow)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;text-align:left;font-size:17px;font-weight:600}
+.qa .pm{width:28px;height:28px;border-radius:50%;background:var(--bg-2);display:grid;place-items:center;flex:none;transition:transform .3s,background .3s}
+.qa .pm svg{width:14px;height:14px}
+.qa.open .pm{transform:rotate(45deg);background:var(--acc);color:var(--acc-ink)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{margin:0;padding:0 22px 20px;color:var(--ink-2)}
 
-/* apply */
-.apply{border:2px solid var(--line);border-radius:32px;padding:48px 36px;background:var(--l1);color:var(--on);display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;box-shadow:8px 8px 0 var(--shadow)}
-@media (max-width:780px){.apply{grid-template-columns:1fr;padding:32px 22px}}
-.apply h2{font-size:clamp(36px,5.6vw,60px);line-height:.98;font-weight:800}
-.apply p{margin:14px 0 0;max-width:44ch;font-weight:500}
-.acts{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-.apply .btn.alt{background:#FFFFFF;color:#1B1530;border-color:#1B1530;box-shadow:4px 4px 0 #1B1530}
-.apply .btn{border-color:#1B1530;box-shadow:4px 4px 0 #1B1530}
-.mail{font-weight:600;user-select:all}
-.toast{font-weight:700;min-height:1.2em}
+/* cta */
+.cta{position:relative;border-radius:32px;overflow:hidden;border:1px solid var(--line);background:var(--solid);display:grid;grid-template-columns:1.1fr 1fr;align-items:stretch;box-shadow:0 40px 80px -40px rgba(38,56,120,.35)}
+@media (max-width:900px){.cta{grid-template-columns:1fr}}
+.cta .txt{padding:48px 40px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+@media (max-width:640px){.cta .txt{padding:32px 22px}}
+.cta h2{font-size:clamp(36px,5vw,58px);line-height:1}
+.cta p{margin:0;color:var(--ink-2);max-width:44ch}
+.cta .acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cta .img{min-height:280px;background:url("img/hero-1920.webp") center/cover}
+.mail{display:flex;align-items:center;gap:10px;font:500 14px var(--mono);color:var(--ink-2)}
+.mail span{user-select:all}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-size:14px;font-weight:500;transition:opacity .25s,transform .25s;z-index:60;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 
-footer{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
-footer a{text-decoration:none;color:var(--ink-2);font-weight:600}
+footer{margin-top:96px;border-top:1px solid var(--line);padding-block:36px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center}
 footer .fl{display:flex;gap:18px;flex-wrap:wrap}
-footer small{color:var(--ink-2)}
+footer a{text-decoration:none;color:var(--ink-2);font-size:14px}
+footer a:hover{color:var(--ink)}
+footer small{color:var(--ink-3);font-size:13px}
 
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="4 Labs home"><i><b></b><b></b><b></b><b></b></i>4 Labs</a>
-    <div class="nav-r">
-      <div class="nav-links"><a href="#program">The program</a><a href="#week">A week</a><a href="#fit">Who it's for</a><a href="#faq">FAQ</a></div>
-      <button class="tg" id="tg" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg></button>
-      <a class="btn sm" href="#apply">Apply</a>
+    <div class="navbar">
+      <a class="logo" href="#top" aria-label="4 Labs home"><span class="mark"><b></b><b></b><b></b><b></b></span>4 Labs</a>
+      <div class="links" id="links"><a href="#program">Program</a><a href="#week">Your week</a><a href="#fit">Fit check</a><a href="#demo">Demo Day</a><a href="#faq">FAQ</a></div>
+      <div class="nr">
+        <button class="icon-btn" id="tg" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <a class="btn pri sm" href="#apply">Apply</a>
+      </div>
+      <span class="prog" id="prog"></span>
     </div>
   </div>
 </nav>
 
-<main class="wrap" id="top">
-  <header class="hero">
-    <div>
-      <span class="eyebrow">Cohort 01 · Applications open</span>
-      <h1>Got an idea? Let's get it to its <span class="hl">first customer.</span></h1>
-      <p class="lede">4 Labs is a free, 8-week remote program for pre-seed, pre-revenue founders. Real mentors, a clear plan, and a final pitch to investors from our network.</p>
-      <div class="ctas"><a class="btn" href="#apply">Apply for Cohort 01</a><a class="btn alt" href="#program">See how it works</a></div>
-    </div>
-    <div class="play" aria-hidden="true">
-      <div class="blob b1"><div><small>Lab 1</small>Problem</div></div>
-      <div class="blob b2"><div><small>Lab 2</small>Build</div></div>
-      <div class="blob b3"><div><small>Lab 3</small>Sell</div></div>
-      <div class="blob b4"><div><small>Lab 4</small>Pitch</div></div>
-      <div class="sticker">Ends with an investor pitch</div>
-    </div>
-  </header>
+<main id="top">
+  <div class="wrap">
+    <header class="hero">
+      <a class="pill" href="#apply"><span class="dot"></span>Cohort 01 applications are open</a>
+      <h1>From idea to <em class="s">investor pitch</em> in eight weeks.</h1>
+      <p class="lede">4 Labs is a free, remote program for pre-seed, pre-revenue founders. You get weekly mentorship, a clear plan, and a live pitch to investors from our network at the end.</p>
+      <div class="ctas">
+        <a class="btn pri" href="#apply">Apply for Cohort 01 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn sec" href="#fit">Check if you're a fit</a>
+      </div>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>Free</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>No equity</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>Fully remote</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5 9-10"/></svg>No revenue needed</span>
+      </div>
+    </header>
 
-  <div class="facts" aria-label="Program facts">
-    <span class="fact" style="--c:var(--l1)">100% free</span>
-    <span class="fact" style="--c:var(--l2)">No equity</span>
-    <span class="fact" style="--c:var(--l3)">8 weeks</span>
-    <span class="fact" style="--c:var(--l4)">Fully remote</span>
-    <span class="fact" style="--c:var(--sun)">5 to 8 founders per cohort</span>
-    <span class="fact" style="--c:var(--l1)">Investor Demo Day</span>
+    <div class="stage" id="stage">
+      <img id="heroImg" src="img/hero-1920.webp" srcset="img/hero-1920.webp 1920w, img/hero-4k.webp 3840w" sizes="(max-width:1240px) 100vw, 1200px" width="3840" height="2400" alt="Four glass spheres of different sizes, one bright blue, resting on a pale blue surface">
+      <div class="chip c1" data-d="18"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span><div><b>Lab 01 · Problem</b><small>18 of 30 interviews done</small><div class="bar"><i></i></div></div></div>
+      <div class="chip c2" data-d="-24"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><b>Mentor 1:1</b><small>Wednesday · 30 min</small></div></div>
+      <div class="chip c3" data-d="12"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 20h18M6 16V9M11 16V5M16 16v-6M21 16V8"/></svg></span><div><b>Demo Day</b><small>Week 8 · Live investor pitch</small></div></div>
+      <span class="ex">Example progress</span>
+    </div>
+
+    <div class="stats" aria-label="Program at a glance">
+      <div class="stat"><b data-count="8">8</b><span>weeks, start to pitch</span></div>
+      <div class="stat"><b data-count="4">4</b><span>labs, 2 weeks each</span></div>
+      <div class="stat"><b>5–8</b><span>founders per cohort</span></div>
+      <div class="stat"><b data-count="0" data-suf="%">0%</b><span>equity taken</span></div>
+      <div class="stat"><b data-count="1">1</b><span>live investor Demo Day</span></div>
+    </div>
+
+    <!-- PROGRAM -->
+    <section class="sec" id="program">
+      <div class="head"><span class="kicker">The program</span><h2>Four labs. Each one ends with <em class="s">proof.</em></h2><p>Every two weeks you finish a lab and leave with something real you can show an investor. Tap a lab to see what happens inside.</p></div>
+      <div class="track" id="track" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="weeks" aria-hidden="true"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span></div>
+      <div class="prog-grid">
+        <div class="tabs" role="tablist" id="tabs" aria-label="Program labs"></div>
+        <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- WEEK -->
+    <section class="sec" id="week">
+      <div class="head"><span class="kicker">Your week</span><h2>Built to fit around <em class="s">school or a job.</em></h2><p>About six hours a week. Hover a session to see where your time goes.</p></div>
+      <div class="week-grid">
+        <div class="days" id="days">
+          <button class="day" data-k="0"><div class="d"><span>Monday</span><em>60 min</em></div><h3>Lab workshop</h3><p>Live session on the lab's topic. Short teaching, then you work on your own startup.</p></button>
+          <button class="day" data-k="1"><div class="d"><span>Midweek</span><em>30 min</em></div><h3>Mentor 1:1</h3><p>Your own time with a mentor. Bring the thing you're stuck on.</p></button>
+          <button class="day" data-k="2"><div class="d"><span>Thursday</span><em>45 min</em></div><h3>Founder circle</h3><p>Cohort call. Share progress, swap intros, help each other get unstuck.</p></button>
+          <button class="day" data-k="3"><div class="d"><span>Friday</span><em>10 min</em></div><h3>Ship log</h3><p>A short written update: what you did, what you learned, what's next.</p></button>
+        </div>
+        <div class="budget">
+          <div><span class="kicker">Weekly time budget</span><h3 style="margin-top:8px">Roughly 6 hours</h3></div>
+          <div class="stack" id="stack"></div>
+          <ul class="legend" id="legend"></ul>
+          <div class="total"><span>Total per week</span><span id="tot">~6 h</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIT -->
+    <section class="sec" id="fit">
+      <div class="head"><span class="kicker">Fit check</span><h2>Are you a <em class="s">4 Labs founder?</em></h2><p>Tap everything that's true. Takes ten seconds.</p></div>
+      <div class="fit-grid">
+        <div class="checks" id="checks"></div>
+        <div class="result">
+          <div class="gauge">
+            <svg viewBox="0 0 200 104" aria-hidden="true"><path d="M12 100a88 88 0 0 1 176 0" fill="none" stroke="var(--line)" stroke-width="14" stroke-linecap="round"/><path id="arc" d="M12 100a88 88 0 0 1 176 0" fill="none" stroke="var(--acc)" stroke-width="14" stroke-linecap="round" pathLength="100" stroke-dasharray="0 101" style="opacity:0;transition:stroke-dasharray .5s cubic-bezier(.2,.7,.2,1),opacity .2s"/></svg>
+            <div class="val"><b id="score">0</b><span> / 5</span></div>
+          </div>
+          <h3 id="rh">Tap what's true for you</h3>
+          <p id="rp">Your result updates as you go.</p>
+          <a class="btn acc" id="rb" href="#apply" hidden>Apply now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="sec" id="demo">
+      <div class="head"><span class="kicker">Week 8 · Demo Day</span><h2>We bring the investors. <em class="s">You bring the story.</em></h2><p>Every founder who finishes the program pitches live to angels and VCs from the 4 Labs network.</p></div>
+      <div class="demo">
+        <div class="pic"><img src="img/demo-1920.webp" srcset="img/demo-1920.webp 1920w, img/demo-4k.webp 3840w" sizes="(max-width:900px) 100vw, 640px" width="3840" height="2160" alt="Four rounded blocks rising in height left to right, the tallest bright blue with a glass sphere on top"><span class="tag">Four labs, one pitch</span></div>
+        <div class="card">
+          <h3>What happens on Demo Day</h3>
+          <ol class="flow">
+            <li><span class="n">1</span><div><b>Investor matching</b><span>Before Demo Day we invite investors who back your stage and sector.</span></div></li>
+            <li><span class="n">2</span><div><b>Live pitch, online</b><span>Five minutes to pitch, then questions from the room.</span></div></li>
+            <li><span class="n">3</span><div><b>Feedback from every investor</b><span>Even a "not now" comes with notes you can use.</span></div></li>
+            <li><span class="n">4</span><div><b>Warm intros after</b><span>We connect you with every investor who wants a follow-up call.</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="sec" id="founder">
+      <div class="head"><span class="kicker">Who runs it</span><h2>Small cohort. <em class="s">Big network.</em></h2></div>
+      <div class="who">
+        <div class="pic"><img src="img/cohort-1920.webp" srcset="img/cohort-1920.webp 1920w, img/cohort-4k.webp 2400w" sizes="(max-width:900px) 100vw, 540px" width="2400" height="2400" alt="Four large glass spheres surrounded by dozens of small white spheres"><span class="tag">5–8 founders, one network</span></div>
+        <div class="fcard">
+          <div class="fhead"><div class="av" aria-hidden="true">AK</div><div><h3>Ayman Khalil</h3><small>Founder, 4 Labs</small></div></div>
+          <p class="quote">"4 Labs is the program I wish I had when I was starting."</p>
+          <p>I started selling in my first year of college. Seven years later I co-founded and run Vanguard Services, a Beirut company that builds sales and support teams for international clients. I built it from zero.</p>
+          <p>I scout startups for LvlUp Ventures and Boardy and mentor founders at Bevisioneers. Those relationships are the investor room you pitch to on Demo Day.</p>
+          <div class="orgs"><span>Vanguard Services</span><span>LvlUp Ventures</span><span>Boardy</span><span>Bevisioneers</span></div>
+          <a class="btn sec sm" style="align-self:flex-start" href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sec" id="faq">
+      <div class="head center"><span class="kicker">Questions</span><h2>Straight answers.</h2></div>
+      <div class="faq" id="faqList"></div>
+    </section>
+
+    <!-- APPLY -->
+    <section class="sec" id="apply">
+      <div class="cta">
+        <div class="txt">
+          <span class="kicker">Cohort 01</span>
+          <h2>Your idea deserves <em class="s">a real shot.</em></h2>
+          <p>Book a 15-minute intro call, or email a few lines about your idea with "4 Labs" in the subject. No deck needed.</p>
+          <div class="acts">
+            <a class="btn pri" href="https://calendly.com/ayman-vanguard-services" target="_blank" rel="noopener">Book an intro call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <button class="btn sec" id="copyMail">Copy email</button>
+          </div>
+          <div class="mail"><span>ayman@vanguard-services.co</span></div>
+        </div>
+        <div class="img" role="img" aria-label="Glass spheres on a pale blue surface"></div>
+      </div>
+    </section>
   </div>
 
-  <section class="block">
-    <div class="sh"><span class="eyebrow">Why 4 Labs</span><h2>Most accelerators want traction. We start before it.</h2><p>You don't need revenue, a cofounder, or a finished product. You need an idea you care about and the willingness to talk to customers.</p></div>
-    <div class="promise">
-      <div class="pr"><div class="ic" style="background:var(--l1)">1</div><h3>Mentorship, not lectures</h3><p>A weekly 1:1 with a mentor who has sold, hired, and built. You bring the problem, we work it together.</p></div>
-      <div class="pr"><div class="ic" style="background:var(--l3)">2</div><h3>A plan you can follow</h3><p>Four labs, two weeks each. Every lab ends with something real: interviews done, a pilot live, a customer signed.</p></div>
-      <div class="pr"><div class="ic" style="background:var(--l4)">3</div><h3>Friends in the same boat</h3><p>A small cohort of founders at your stage. Share wins, get stuck together, and get unstuck faster.</p></div>
-    </div>
-  </section>
-
-  <section class="block" id="program">
-    <div class="sh"><span class="eyebrow">The program</span><h2>Four labs. Eight weeks. One goal: your first customer.</h2><p>Each lab is two weeks. You leave each one with a result you can point to.</p></div>
-    <div class="labs">
-      <article class="lab" style="--c:var(--l1)">
-        <div class="lab-side"><span class="wk">Weeks 1 to 2</span><div><span class="num">01</span><h3>Problem</h3></div></div>
-        <div class="lab-body">
-          <p class="q">Is this a problem people actually have?</p>
-          <div><h4>You'll do</h4><ul><li>Pick one clear customer</li><li>Run 20 to 30 customer interviews</li><li>Find the pain people would pay to fix</li></ul></div>
-          <div><h4>We help with</h4><ul><li>Interview scripts that don't lead the witness</li><li>Finding people to talk to</li><li>Reading what the answers really mean</li></ul></div>
-          <div class="out">You leave with <span>A validated problem</span></div>
-        </div>
-      </article>
-      <article class="lab" style="--c:var(--l2)">
-        <div class="lab-side"><span class="wk">Weeks 3 to 4</span><div><span class="num">02</span><h3>Build</h3></div></div>
-        <div class="lab-body">
-          <p class="q">What's the smallest thing that solves it?</p>
-          <div><h4>You'll do</h4><ul><li>Design the simplest version</li><li>Build it with no-code tools or by hand</li><li>Put it in front of 5 real users</li></ul></div>
-          <div><h4>We help with</h4><ul><li>Cutting scope to what matters</li><li>Choosing tools you can ship with</li><li>Testing without writing code</li></ul></div>
-          <div class="out">You leave with <span>A working MVP or pilot offer</span></div>
-        </div>
-      </article>
-      <article class="lab" style="--c:var(--l3)">
-        <div class="lab-side"><span class="wk">Weeks 5 to 6</span><div><span class="num">03</span><h3>Sell</h3></div></div>
-        <div class="lab-body">
-          <p class="q">Will someone pay for it?</p>
-          <div><h4>You'll do</h4><ul><li>Write your first outreach</li><li>Book and run 10 sales calls</li><li>Ask for the money, even if it's small</li></ul></div>
-          <div><h4>We help with</h4><ul><li>Cold messages that get replies</li><li>Live call practice and feedback</li><li>Handling "not now" and "too expensive"</li></ul></div>
-          <div class="out">You leave with <span>Your first paying customer or signed pilot</span></div>
-        </div>
-      </article>
-      <article class="lab" style="--c:var(--l4)">
-        <div class="lab-side"><span class="wk">Weeks 7 to 8</span><div><span class="num">04</span><h3>Pitch</h3></div></div>
-        <div class="lab-body">
-          <p class="q">Are you ready to pitch real investors?</p>
-          <div><h4>You'll do</h4><ul><li>Set your pricing</li><li>Map your basic unit economics</li><li>Build a 10-slide deck</li></ul></div>
-          <div><h4>We help with</h4><ul><li>Pricing that doesn't undersell you</li><li>A story built on what you learned</li><li>Pitch rehearsals until it feels easy</li><li>Matching you with the right investors</li></ul></div>
-          <div class="out">You leave with <span>A pitch and a room full of investors to hear it</span></div>
-        </div>
-      </article>
-      <div class="demo">
-        <div><h3>Demo Day: pitch to real investors</h3><p>End of week 8. You pitch live to angels and VCs from the 4 Labs network. We bring the investors, you bring the story. Every founder who finishes gets a slot. After Demo Day we make warm intros to the investors who want to talk.</p></div>
-        <a class="btn alt" href="#apply">Get in the first cohort</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="week">
-    <div class="sh"><span class="eyebrow">A week inside</span><h2>Light enough to fit around school or a job.</h2></div>
-    <div class="week">
-      <div class="day"><span class="d">Monday</span><h3>Lab workshop</h3><p>Live session on the week's topic. Short teaching, lots of doing.</p><span class="t">60 min · live</span></div>
-      <div class="day"><span class="d">Midweek</span><h3>Mentor 1:1</h3><p>Your own time with a mentor. Bring your blockers.</p><span class="t">30 min · 1:1</span></div>
-      <div class="day"><span class="d">Thursday</span><h3>Founder circle</h3><p>Cohort call. Share progress, trade intros, help each other.</p><span class="t">45 min · group</span></div>
-      <div class="day"><span class="d">Friday</span><h3>Ship log</h3><p>A short written update: what you did, what you learned, what's next.</p><span class="t">10 min · async</span></div>
-    </div>
-    <p class="hours">Plan on 5 to 8 hours a week, including your own work.</p>
-  </section>
-
-  <section class="block" id="fit">
-    <div class="sh"><span class="eyebrow">Who it's for</span><h2>First-time founders are exactly who we want.</h2></div>
-    <div class="fit">
-      <div class="col yes"><h3>You're a great fit if</h3>
-        <ul><li><b>✓</b>You have an idea or early prototype, and no revenue yet</li><li><b>✓</b>You're a student, recent grad, or building on the side</li><li><b>✓</b>You're solo or have a cofounder. Both work</li><li><b>✓</b>You want honest feedback, not applause</li><li><b>✓</b>You can give it 5 to 8 hours a week for 8 weeks</li></ul></div>
-      <div class="col"><h3>Probably not yet if</h3>
-        <ul><li><b>✕</b>You already have steady revenue</li><li><b>✕</b>You're raising a big round right now</li><li><b>✕</b>You want funding but not mentorship</li><li><b>✕</b>You can't commit to the weekly rhythm</li></ul></div>
-    </div>
-  </section>
-
-  <section class="block" id="founder">
-    <div class="sh"><span class="eyebrow">Who runs it</span><h2>Built by someone who started young too.</h2></div>
-    <div class="founder">
-      <div class="ph" aria-hidden="true">AK</div>
-      <div>
-        <h3>Ayman Khalil</h3>
-        <div class="role">Founder, 4 Labs</div>
-        <p>I started selling in my first year of college and haven't stopped. Seven years later I co-founded and run Vanguard Services, a Beirut company that builds sales and support teams for international clients. I built it from zero.</p>
-        <p>I also scout startups for LvlUp Ventures and Boardy, and mentor founders at Bevisioneers. 4 Labs is the program I wish I had when I was starting.</p>
-        <div class="tags"><span class="tag">Vanguard Services</span><span class="tag">LvlUp Ventures</span><span class="tag">Boardy</span><span class="tag">Bevisioneers</span></div>
-        <p style="margin-top:16px"><a href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener">Say hi on LinkedIn ↗</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="faq">
-    <div class="sh"><span class="eyebrow">Questions</span><h2>Good questions, straight answers.</h2></div>
-    <div class="faq">
-      <details><summary>Is it really free?</summary><p>Yes. No fee and no equity. Our job is to get you ready and put you in front of investors.</p></details>
-      <details><summary>Do I need a cofounder?</summary><p>No. Solo founders are welcome. If you meet someone in the cohort, even better.</p></details>
-      <details><summary>Do I need a product already?</summary><p>No. An idea you care about is enough. Lab 2 is where you build the first version.</p></details>
-      <details><summary>I'm still a student. Can I apply?</summary><p>Yes. The program is built to fit around classes or a job.</p></details>
-      <details><summary>Will I actually meet investors?</summary><p>Yes. Demo Day is a live pitch to angels and VCs from our network, and we follow up with warm intros to anyone interested. Raising is up to you and the investor, but you'll be in the room.</p></details>
-      <details><summary>What if I fall behind?</summary><p>Tell your mentor. We adjust the plan. The only rule is to keep showing up.</p></details>
-      <details><summary>Where is it?</summary><p>Online. Founders can join from anywhere. Sessions run on Beirut time (UTC+3) and we schedule around the cohort.</p></details>
-    </div>
-  </section>
-
-  <section class="block" id="apply">
-    <div class="apply">
-      <div><h2>Your idea deserves a real shot.</h2><p>Book a 15-minute intro call, or email a few lines about your idea with "4 Labs" in the subject. No deck needed.</p></div>
-      <div class="acts">
-        <a class="btn" href="https://calendly.com/ayman-vanguard-services" target="_blank" rel="noopener">Book an intro call</a>
-        <button class="btn alt" id="copyMail">Copy application email</button>
-        <span class="mail">ayman@vanguard-services.co</span>
-        <span class="toast" id="toast" role="status"></span>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div><a class="logo" href="#top"><i><b></b><b></b><b></b><b></b></i>4 Labs</a><small>Free mentorship for pre-seed founders. Run from Beirut, open to everyone.</small></div>
-    <div class="fl"><a href="#program">The program</a><a href="#faq">FAQ</a><a href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener">LinkedIn</a></div>
-  </footer>
+  <div class="wrap">
+    <footer>
+      <div style="display:flex;flex-direction:column;gap:8px"><a class="logo" href="#top"><span class="mark"><b></b><b></b><b></b><b></b></span>4 Labs</a><small>Free mentorship for pre-seed founders. Run from Beirut, open to everyone.</small></div>
+      <div class="fl"><a href="#program">Program</a><a href="#fit">Fit check</a><a href="#demo">Demo Day</a><a href="#faq">FAQ</a><a href="https://linkedin.com/in/aymanwkhalil" target="_blank" rel="noopener">LinkedIn</a></div>
+    </footer>
+  </div>
 </main>
+<div class="toast" id="toast" role="status"></div>
 
 <script>
 (function(){
-  var r=document.documentElement;
-  function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
-  try{var s=localStorage.getItem('4l-theme');if(s)r.setAttribute('data-theme',s);}catch(e){}
-  document.getElementById('tg').addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('4l-theme',n);}catch(e){}});
-  var t=document.getElementById('toast'),tt;
-  document.getElementById('copyMail').addEventListener('click',function(){
-    var m='ayman@vanguard-services.co';
-    function say(x){t.textContent=x;clearTimeout(tt);tt=setTimeout(function(){t.textContent='';},2200);}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(function(){say('Email copied');},function(){say(m);});}else{say(m);}
-  });
+  var R=document.documentElement,$=function(s,c){return (c||document).querySelector(s);},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s));};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>';
+
+  /* theme */
+  function cur(){return R.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
+  try{var s=localStorage.getItem('4l-theme');if(s)R.setAttribute('data-theme',s);}catch(e){}
+  $('#tg').addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';R.setAttribute('data-theme',n);try{localStorage.setItem('4l-theme',n);}catch(e){}});
+
+  /* scroll progress + active link */
+  var prog=$('#prog');
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;prog.style.width=(max>0?h.scrollTop/max*100:0)+'%';}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var links=$$('#links a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    ['program','week','fit','demo','faq'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+
+  /* hero tilt */
+  var stage=$('#stage'),img=$('#heroImg'),chips=$$('.chip',stage);
+  if(!reduce&&matchMedia('(pointer:fine)').matches){
+    stage.addEventListener('pointermove',function(e){var r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      img.style.transform='scale(1.04) translate('+(-x*14)+'px,'+(-y*10)+'px)';
+      chips.forEach(function(c){var d=+c.dataset.d;c.style.transform='translate('+(x*d)+'px,'+(y*d*.6)+'px)';});});
+    stage.addEventListener('pointerleave',function(){img.style.transform='';chips.forEach(function(c){c.style.transform='';});});
+  }
+
+  /* program */
+  var LABS=[
+    {n:'01',t:'Problem',w:'Weeks 1–2',wk:[0,1],c:'var(--l1)',q:'Is this a problem people actually have?',
+     d:['Pick one clear customer','Run 20 to 30 customer interviews','Find the pain people would pay to fix'],
+     h:['Interview scripts that don\'t lead the witness','Finding the right people to talk to','Reading what the answers really mean'],o:'A validated problem, backed by interviews'},
+    {n:'02',t:'Build',w:'Weeks 3–4',wk:[2,3],c:'var(--l2)',q:'What\'s the smallest thing that solves it?',
+     d:['Design the simplest version','Build it with no-code tools or by hand','Put it in front of 5 real users'],
+     h:['Cutting scope to what matters','Picking tools you can ship with this week','Testing without writing code'],o:'A working MVP or pilot offer'},
+    {n:'03',t:'Sell',w:'Weeks 5–6',wk:[4,5],c:'var(--l3)',q:'Will someone actually pay for it?',
+     d:['Write your first outreach','Book and run 10 sales calls','Ask for the money, even if it\'s small'],
+     h:['Cold messages that get replies','Live call practice with feedback','Handling "not now" and "too expensive"'],o:'Your first paying customer or signed pilot'},
+    {n:'04',t:'Pitch',w:'Weeks 7–8',wk:[6,7],c:'color-mix(in srgb,var(--acc) 35%,transparent)',q:'Are you ready to pitch real investors?',
+     d:['Set your pricing and basic numbers','Build a 10-slide deck','Rehearse until it feels easy'],
+     h:['A story built on what you learned','Pitch rehearsals with mentors','Matching you with the right investors'],o:'A live pitch to investors on Demo Day'}
+  ];
+  var tabs=$('#tabs'),panel=$('#panel'),bars=$$('#track i'),idx=0,timer=null,auto=!reduce;
+  LABS.forEach(function(L,i){var b=document.createElement('button');b.className='tab';b.id='tab'+i;b.setAttribute('role','tab');b.setAttribute('aria-controls','panel');
+    b.innerHTML='<span class="n">'+L.n+'</span><span><b>'+L.t+'</b><small>'+L.w+'</small></span><span class="tm"></span>';
+    b.addEventListener('click',function(){auto=false;show(i);});tabs.appendChild(b);});
+  tabs.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();auto=false;show((idx+1)%4,true);}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();auto=false;show((idx+3)%4,true);}});
+  function li(a){return a.map(function(x){return '<li>'+CK+'<span>'+x+'</span></li>';}).join('');}
+  function show(i,focus){idx=i;var L=LABS[i];
+    $$('.tab',tabs).forEach(function(t,j){t.setAttribute('aria-selected',j===i?'true':'false');t.tabIndex=j===i?0:-1;var tm=$('.tm',t);tm.classList.remove('run');if(j===i&&auto){void tm.offsetWidth;tm.classList.add('run');}});
+    if(focus)$('#tab'+i).focus();
+    bars.forEach(function(b,k){b.className=L.wk.indexOf(k)>-1?'on':(k<L.wk[0]?'done':'');});
+    panel.style.setProperty('--pc',L.c);panel.setAttribute('aria-labelledby','tab'+i);
+    panel.innerHTML='<div class="top fade"><span class="kicker">Lab '+L.n+' · '+L.w+'</span><h3>'+L.t+'</h3><p class="q">'+L.q+'</p></div>'+
+      '<div class="fade"><h4>You\'ll do</h4><ul>'+li(L.d)+'</ul></div><div class="fade"><h4>We help with</h4><ul>'+li(L.h)+'</ul></div>'+
+      '<div class="deliv fade"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 15l-3.5 2 1-4-3-2.7 4-.3L12 6l1.5 4 4 .3-3 2.7 1 4z"/></svg></span><div><small>You leave with</small><b>'+L.o+'</b></div></div>';
+    clearTimeout(timer);if(auto)timer=setTimeout(function(){if(auto)show((idx+1)%4);},7000);
+  }
+  show(0);
+  panel.addEventListener('pointerenter',function(){auto=false;clearTimeout(timer);$$('.tm',tabs).forEach(function(t){t.classList.remove('run');});});
+
+  /* week budget */
+  var SEG=[{t:'Lab workshop',m:60,c:'var(--acc)'},{t:'Mentor 1:1',m:30,c:'var(--acc-2)'},{t:'Founder circle',m:45,c:'color-mix(in srgb,var(--acc) 35%,var(--l3))'},{t:'Ship log',m:10,c:'var(--l2)'},{t:'Your own work',m:215,c:'repeating-linear-gradient(135deg,var(--bg-2) 0 6px,var(--line) 6px 8px)'}];
+  var tot=SEG.reduce(function(a,s){return a+s.m;},0),stack=$('#stack'),leg=$('#legend');
+  function fmt(m){var h=Math.floor(m/60),r=m%60;return (h?h+' h ':'')+(r?r+' min':'').trim();}
+  SEG.forEach(function(s,i){var e=document.createElement('i');e.style.flexBasis=(s.m/tot*100)+'%';e.style.background=s.c;e.title=s.t+': '+fmt(s.m);stack.appendChild(e);
+    var l=document.createElement('li');l.innerHTML='<i style="background:'+s.c+';border:1px solid var(--line-2)"></i><span>'+s.t+'</span><b>'+fmt(s.m)+'</b>';leg.appendChild(l);});
+  $('#tot').textContent=fmt(tot);
+  function hl(k){$$('i',stack).forEach(function(e,j){e.classList.toggle('hl',j===k);});$$('li',leg).forEach(function(e,j){e.classList.toggle('hl',j===k);});$$('.day').forEach(function(d){d.classList.toggle('on',+d.dataset.k===k);});}
+  $$('.day').forEach(function(d){var k=+d.dataset.k;d.addEventListener('mouseenter',function(){hl(k);});d.addEventListener('focus',function(){hl(k);});d.addEventListener('click',function(){hl(k);});});
+  $('#days').addEventListener('mouseleave',function(){hl(-1);});
+  hl(0);
+
+  /* fit check */
+  var Q=['I have an idea or an early prototype','I don\'t have steady revenue yet','I can give it 5 to 8 hours a week','I\'m ready to talk to real customers','I want mentorship, not just a check'];
+  var checks=$('#checks'),state=Q.map(function(){return false;});
+  Q.forEach(function(q,i){var b=document.createElement('button');b.className='check';b.setAttribute('role','checkbox');b.setAttribute('aria-checked','false');
+    b.innerHTML='<span class="bx">'+CK+'</span><span>'+q+'</span>';
+    b.addEventListener('click',function(){state[i]=!state[i];b.setAttribute('aria-checked',state[i]);score();});checks.appendChild(b);});
+  function score(){var n=state.filter(Boolean).length,any=state.some(Boolean);
+    $('#score').textContent=n;var a=$('#arc');a.setAttribute('stroke-dasharray',(n/5*100)+' 101');a.style.opacity=n?1:0;
+    var h,p,btn=$('#rb');
+    if(!any){h='Tap what\'s true for you';p='Your result updates as you go.';btn.hidden=true;}
+    else if(n===5){h='You\'re exactly who we built this for.';p='Apply for Cohort 01. Spots are limited to 8 founders.';btn.hidden=false;btn.textContent='Apply now';}
+    else if(n>=3){h='You\'re close.';p='Apply anyway and tell us what\'s missing. We\'ll be honest about fit.';btn.hidden=false;btn.textContent='Apply and tell us more';}
+    else{h='Maybe not yet.';p='That\'s fine. Keep going and check back for Cohort 02.';btn.hidden=true;}
+    $('#rh').textContent=h;$('#rp').textContent=p;}
+
+  /* faq */
+  var F=[['Is it really free?','Yes. No fee and no equity. Our job is to get you ready and put you in front of investors.'],
+    ['Will I actually meet investors?','Yes. Demo Day is a live online pitch to angels and VCs from our network. We follow up with warm intros to every investor who wants to talk. The raise itself is between you and them.'],
+    ['Do I need a cofounder?','No. Solo founders are welcome. If you meet someone great in the cohort, even better.'],
+    ['Do I need a product already?','No. An idea you care about is enough. Lab 2 is where you build the first version.'],
+    ['I\'m a student. Can I apply?','Yes. The program is built to fit around classes or a job. Plan on about 6 hours a week.'],
+    ['What if I fall behind?','Tell your mentor and we adjust the plan. The only rule is to keep showing up.'],
+    ['Where and when does it run?','Online, so you can join from anywhere. Live sessions run on Beirut time (UTC+3) and we schedule around the cohort.']];
+  var fl=$('#faqList');
+  F.forEach(function(f,i){var d=document.createElement('div');d.className='qa'+(i===0?' open':'');
+    d.innerHTML='<button aria-expanded="'+(i===0)+'" aria-controls="a'+i+'" id="q'+i+'"><span>'+f[0]+'</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans" id="a'+i+'" role="region" aria-labelledby="q'+i+'"><div><p>'+f[1]+'</p></div></div>';
+    $('button',d).addEventListener('click',function(){var o=!d.classList.contains('open');d.classList.toggle('open',o);this.setAttribute('aria-expanded',o);});fl.appendChild(d);});
+
+  /* copy */
+  var toast=$('#toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show');},2200);}
+  $('#copyMail').addEventListener('click',function(){var m='ayman@vanguard-services.co';
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(function(){say('Email copied');},function(){say(m);});}else{say(m);}});
 })();
 </script>
 </body>
